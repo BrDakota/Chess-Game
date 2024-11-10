@@ -1,0 +1,9 @@
+================ PROPERTIES ================
+    position: This will be the position of the tile
+
+================ METHODS ================
+    getPosition: This will get the position of the tile
+    setPosition: This will set the position of the tile
+
+================ FUNCTIONS ================
+    isOcuppied(): This function should check if a tile is currently occupied

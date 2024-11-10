@@ -1,0 +1,13 @@
+================ PROPERTIES ================
+    Tiles: Array of Tiles
+    Pieces: Collection of Pieces on the board
+
+================ METHODS ================
+    setTiles: This method should set the tiles that create the board to use their positions
+    setPieces: This method should set the pieces that are on the board to use their positions and rules
+    getTilePosition: This method should get the tiles positions
+    getPiecePosition: This method should get the piece positions
+
+================ FUNCTIONS ================
+    pieceCount(): This will count the amount of each piece for each team on the board
+    promotePawn(): This function will promote pawns that reach the back of the board
