@@ -1,7 +1,6 @@
 ================ PROPERTIES ================
     position: This is the position of the piece
     team/color: This is the team of the piece
-    rules: This will define the rules of play for each piece (hardcoded into each piece)
 
 ================ METHODS ================
     getPosition: This will get position of the piece
@@ -10,5 +9,4 @@
     getTeam: Gets the team of the piece
 
 ================ FUCNTIONS ================
-    movePiece(): This function should move pieces
-    capturePiece(): This function should allow the capturing of pieces
+    setPieceRules(string pieceType): This will define the rules for the movement of the piece

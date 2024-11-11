@@ -1,9 +1,11 @@
 ================ PROPERTIES ================
     position: This will be the position of the tile
+    isOccupied: This will be a flag for when a piece is on the tile
 
 ================ METHODS ================
     getPosition: This will get the position of the tile
     setPosition: This will set the position of the tile
+    getOcupancy: This should return if the space is occupied
+    setOcupancy: This will set the tile to occupied or not.
 
 ================ FUNCTIONS ================
-    isOcuppied(): This function should check if a tile is currently occupied

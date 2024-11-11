@@ -9,5 +9,7 @@
     getPiecePosition: This method should get the piece positions
 
 ================ FUNCTIONS ================
+    movePiece(): This function should move pieces
+    capturePiece(): This function should capture the pieces
     pieceCount(): This will count the amount of each piece for each team on the board
     promotePawn(): This function will promote pawns that reach the back of the board
