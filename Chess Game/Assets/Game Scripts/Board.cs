@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
-    public Tiles[,] tilesArr = new Tiles[8, 8];
-    public Pieces[] piecesArr = new Pieces[32];
+    public GameObject[] tilesArr;
+    public GameObject[] piecesArr;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame

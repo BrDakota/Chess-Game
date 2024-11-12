@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Pieces : MonoBehaviour
 {
-    Vector2 position;
-    string team;
+    public string team;
 
     // Start is called before the first frame update
     void Start()

@@ -3,10 +3,8 @@
     team/color: This is the team of the piece
 
 ================ METHODS ================
-    getPosition: This will get position of the piece
-    setPosition: This will set the position of the piece
-    setTeam: Sets the team of the piece
-    getTeam: Gets the team of the piece
+    position: handled by unity
+    color: set in unity editor
 
 ================ FUCNTIONS ================
     setPieceRules(string pieceType): This will define the rules for the movement of the piece
