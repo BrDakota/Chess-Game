@@ -1,11 +1,5 @@
 ================ PROPERTIES ================
-    position: This will be the position of the tile
-    isOccupied: This will be a flag for when a piece is on the tile
-    occupancyColor: This is the color of the piece on the space
-
-================ METHODS ================
-    setOcupancy: This will set the tile to occupied or not. (will also set the occupancyColor)
-    getColor: Returns the color occupying the space.
-    position: handled by unity
+    Piece: This is the occupying piece on the tile
 
 ================ FUNCTIONS ================
+    This class only contains a piece and has no functionality currently

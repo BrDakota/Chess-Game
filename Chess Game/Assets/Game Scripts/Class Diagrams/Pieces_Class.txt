@@ -1,10 +1,18 @@
 ================ PROPERTIES ================
-    position: This is the position of the piece
-    team/color: This is the team of the piece
-
-================ METHODS ================
-    position: handled by unity
-    color: set in unity editor
+    Name: This is the name of the piece
+    Team: This represents the color of the piece
+    posX: This will be the row index of the tile the piece is currently on
+    posY: This will be the column index of the tile the piece is currently on
 
 ================ FUCNTIONS ================
-    setPieceRules(string pieceType): This will define the rules for the movement of the piece
+    DestroyMovePlates(): This destroys all of the move plates that are currently on the board
+    IntiateMovePlates(): This will create the move plates based on the piece selected. This inheriently sets the rules for the piece because
+        it can only select to move to a move plate that has been created
+    LineMovePlates(): This will create move plates in a line on a given increament until it reaches the edge or a piece it can not move through
+    LMovePlate(): This will create move plates in a L shape to mimic the rules of the horse
+    SurroundMovePlate(): This will surround the chess piece in move plates
+    PointMovePlate(): This creates a move plate at a specified location
+    PawnMovePlate(): This creates a move plate unique to the pawn only allowing it to move in one direction and creating diagonal move plates for
+        it to attack
+    MovePlateSpawn(): This instatiates the move plates at desired locations
+    MovePlateAttackSpawn(): This is the same as MovePlateSpawn() but it sets the attack flag to true to destroy the opposite game object

@@ -1,0 +1,10 @@
+================ PROPERTIES ================
+    Reference: This is the game object the move plates should represent
+    matrixX: This is the row of the move plate
+    matrixY: This is the column of the move plate
+    attack: This is a flag to show if the move plate represents an attack
+
+================ FUCNTIONS ================
+    SetReference(): This sets the Reference piece
+    GetReference(): This returns the reference piece
+    SetCoords(): This sets the matrixX and matrixY

@@ -1,12 +1,14 @@
 ================ PROPERTIES ================
     Tiles: Array of Tiles
-    Pieces: Collection of Pieces on the board
-
-================ METHODS ================
-    
+    Black Pieces: The types of black pieces stored in an Array
+    White Pieces: They types of white pieces stored in an Array
+    Player White: All of the white pieces on the board
+    Player Black: All of the black pieces on the board
+    Game over: this will determine a game over  
 
 ================ FUNCTIONS ================
-    movePiece(): This function should move pieces
-    capturePiece(): This function should capture the pieces
-    pieceCount(): This will count the amount of each piece for each team on the board
-    promotePawn(): This function will promote pawns that reach the back of the board
+    GetTilePosition(): this function gets the transform.position of a tile
+    SetPositionEmpty(): This function disconnects the piece from the tile
+    SetPosition(): This function connects the piece to the tile
+    PositionOnBoard(): This function checks that the position given is a true position on the board
+    GetPiece(): This function gets the piece on the selected tile
