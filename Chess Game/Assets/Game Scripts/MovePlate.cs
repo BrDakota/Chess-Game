@@ -24,7 +24,6 @@ public class MovePlate : MonoBehaviour
                 board = GameObject.FindGameObjectWithTag("Board");
 
                 if(attack){
-                    Debug.Log("Attacking");
                     GameObject cp = board.GetComponent<Board>().GetPiece(matrixX, matrixY);
 
                     Destroy(cp);
@@ -37,6 +36,7 @@ public class MovePlate : MonoBehaviour
 
                 board.GetComponent<Board>().SetPosition(matrixX, matrixY, reference);
                 reference.GetComponent<Pieces>().DestroyMovePlates();
+                board.GetComponent<Board>().SwitchTurn();
             }
         }
     }

@@ -47,42 +47,57 @@ public class Pieces : MonoBehaviour
         switch(this.name){
             case "black_queen":
             case "white_queen":
-                LineMovePlate(1, 0);
-                LineMovePlate(0, 1);
-                LineMovePlate(1, 1);
-                LineMovePlate(-1, 0);
-                LineMovePlate(0, -1);
-                LineMovePlate(-1, -1);
-                LineMovePlate(-1, 1);
-                LineMovePlate(1, -1);
+                if (board.GetComponent<Board>().currentPlayer == team)
+                {
+                    LineMovePlate(1, 0);
+                    LineMovePlate(0, 1);
+                    LineMovePlate(1, 1);
+                    LineMovePlate(-1, 0);
+                    LineMovePlate(0, -1);
+                    LineMovePlate(-1, -1);
+                    LineMovePlate(-1, 1);
+                    LineMovePlate(1, -1);
+                }
                 break;
-            case"black_knight":
+            case "black_knight":
             case"white_knight":
-                LMovePlate();
+                if (board.GetComponent<Board>().currentPlayer == team)
+                {
+                    LMovePlate();
+                }
                 break;
             case "black_bishop":
             case "white_bishop":
-                LineMovePlate(1, 1);
-                LineMovePlate(1, -1);
-                LineMovePlate(-1, 1);
-                LineMovePlate(-1, -1);
+                if (board.GetComponent<Board>().currentPlayer == team)
+                {
+                    LineMovePlate(1, 1);
+                    LineMovePlate(1, -1);
+                    LineMovePlate(-1, 1);
+                    LineMovePlate(-1, -1);
+                }
                 break;
             case "black_king":
             case "white_king":
-                SurroundMovePlate();
+                if (board.GetComponent<Board>().currentPlayer == team)
+                    SurroundMovePlate();
                 break;
             case "black_rook":
             case "white_rook":
-                LineMovePlate(1, 0);
-                LineMovePlate(-1, 0);
-                LineMovePlate(0, 1);
-                LineMovePlate(0, -1);
+                if (board.GetComponent<Board>().currentPlayer == team)
+                {
+                    LineMovePlate(1, 0);
+                    LineMovePlate(-1, 0);
+                    LineMovePlate(0, 1);
+                    LineMovePlate(0, -1);
+                }
                 break;
             case "black_pawn":
-                PawnMovePlate(posX - 1, posY);
+                if (board.GetComponent<Board>().currentPlayer == team)
+                    PawnMovePlate(posX - 1, posY);
                 break;
             case "white_pawn":
-                PawnMovePlate(posX + 1, posY);
+                if (board.GetComponent<Board>().currentPlayer == team)
+                    PawnMovePlate(posX + 1, posY);
                 break;
         }
     }

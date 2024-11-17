@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Numerics;
 using Unity.Mathematics;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,6 +19,7 @@ public class Board : MonoBehaviour
     private GameObject[] playerWhite = new GameObject[16];
     private GameObject[] playerBlack = new GameObject[16];
 
+    public string currentPlayer = "white";
     private bool gameOver = false;
 
     private string[] charArr = {"A", "B", "C", "D", "E", "F", "G", "H"};
@@ -102,5 +104,19 @@ public class Board : MonoBehaviour
     
     public GameObject GetPiece(int x, int y){
         return tilesArr[x, y].GetComponent<Tiles>().piece;
+    }
+
+    public string SwitchTurn()
+    {
+        if(currentPlayer == "white")
+        {
+            currentPlayer = "black";
+        }
+        else
+        {
+            currentPlayer = "white";
+        }
+
+        return currentPlayer;
     }
 }

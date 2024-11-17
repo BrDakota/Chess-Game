@@ -4,6 +4,7 @@
     White Pieces: They types of white pieces stored in an Array
     Player White: All of the white pieces on the board
     Player Black: All of the black pieces on the board
+    Current Player: This is the current player's turn
     Game over: this will determine a game over  
 
 ================ FUNCTIONS ================
@@ -12,3 +13,6 @@
     SetPosition(): This function connects the piece to the tile
     PositionOnBoard(): This function checks that the position given is a true position on the board
     GetPiece(): This function gets the piece on the selected tile
+    SwitchTurn(): This function swaps the string connected to current Player
+        this shows that the turn has changed
+    
