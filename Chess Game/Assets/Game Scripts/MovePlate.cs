@@ -37,6 +37,7 @@ public class MovePlate : MonoBehaviour
                 board.GetComponent<Board>().SetPosition(matrixX, matrixY, reference);
                 reference.GetComponent<Pieces>().DestroyMovePlates();
                 board.GetComponent<Board>().SwitchTurn();
+                reference.GetComponent<Pieces>().turnCounter++;
             }
         }
     }

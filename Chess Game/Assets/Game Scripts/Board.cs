@@ -85,7 +85,7 @@ public class Board : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public UnityEngine.Vector2 GetTilePosition(int x, int y){

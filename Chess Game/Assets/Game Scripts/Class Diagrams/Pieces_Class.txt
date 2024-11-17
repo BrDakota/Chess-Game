@@ -3,6 +3,7 @@
     Team: This represents the color of the piece
     posX: This will be the row index of the tile the piece is currently on
     posY: This will be the column index of the tile the piece is currently on
+    Turn Counter: This keeps track of how many times the piece has been moved which is used for pawn double movement, and castling
 
 ================ FUCNTIONS ================
     DestroyMovePlates(): This destroys all of the move plates that are currently on the board

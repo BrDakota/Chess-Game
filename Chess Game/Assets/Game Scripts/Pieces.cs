@@ -14,6 +14,8 @@ public class Pieces : MonoBehaviour
     public int posX;
     public int posY;
 
+    public int turnCounter = 0;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -157,7 +159,20 @@ public class Pieces : MonoBehaviour
     public void PawnMovePlate(int x, int y){
         Board sc = board.GetComponent<Board>();
         if(sc.PositionOnBoard(x, y)){
-            if(sc.GetPiece(x, y) == null){
+            if (sc.GetPiece(x, y) == null && turnCounter == 0)
+            {
+                if(sc.GetPiece(x + 1, y) == null)
+                {
+                    MovePlateSpawn(x + 1, y);
+                    MovePlateSpawn(x, y);
+                }
+                else if(sc.GetPiece(x - 1, y) == null)
+                {
+                    MovePlateSpawn(x - 1, y);
+                    MovePlateSpawn(x, y);
+                }
+            }
+            else if(sc.GetPiece(x, y) == null){
                 MovePlateSpawn(x, y);
             }
 
