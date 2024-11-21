@@ -7,11 +7,15 @@ using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Board : MonoBehaviour
 {
     public GameObject[,] tilesArr = new GameObject[8, 8];
+
+    public GameObject quitBtn;
+    public GameObject resetBtn;
 
     // key: king[0], queen[1], rook[2], bishop[3], knight[4], pawn[5]
     public GameObject[] blackPieces = new GameObject[6];
@@ -20,7 +24,7 @@ public class Board : MonoBehaviour
     private GameObject[] playerBlack = new GameObject[16];
 
     public string currentPlayer = "white";
-    private bool gameOver = false;
+    public bool gameOver = false;
 
     private string[] charArr = {"A", "B", "C", "D", "E", "F", "G", "H"};
 
@@ -80,12 +84,21 @@ public class Board : MonoBehaviour
             playerWhite[i].GetComponent<Pieces>().posY = i;
             playerWhite[i + 8].GetComponent<Pieces>().posY = i;
         }
+
+        resetBtn = GameObject.FindGameObjectWithTag("ResetBtn");
+        resetBtn.SetActive(false);
+        quitBtn = GameObject.FindGameObjectWithTag("QuitBtn");
+        quitBtn.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (gameOver)
+        {
+            resetBtn.SetActive(true);
+            quitBtn.SetActive(true);
+        }
     }
 
     public UnityEngine.Vector2 GetTilePosition(int x, int y){
@@ -118,5 +131,15 @@ public class Board : MonoBehaviour
         }
 
         return currentPlayer;
+    }
+
+    public void Reset()
+    {
+        SceneManager.LoadScene("Chess Board");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

@@ -4,9 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - selected
   - Board
   - MovePlate
+  - ResetBtn
+  - QuitBtn
   layers:
   - Default
   - TransparentFX

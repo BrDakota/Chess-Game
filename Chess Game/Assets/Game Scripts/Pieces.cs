@@ -63,14 +63,14 @@ public class Pieces : MonoBehaviour
                 break;
             case "black_knight":
             case"white_knight":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
                 {
                     LMovePlate();
                 }
                 break;
             case "black_bishop":
             case "white_bishop":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
                 {
                     LineMovePlate(1, 1);
                     LineMovePlate(1, -1);
@@ -80,12 +80,33 @@ public class Pieces : MonoBehaviour
                 break;
             case "black_king":
             case "white_king":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
+                { 
                     SurroundMovePlate();
+                    if(turnCounter == 0)
+                    {
+                        Board sc = board.GetComponent<Board>();
+                        if(sc.GetPiece(posX, posY - 4).GetComponent<Pieces>().name == $"{team}_rook" && sc.GetPiece(posX, posY - 4).GetComponent<Pieces>().turnCounter == 0)
+                        {
+                            if(sc.GetPiece(posX, posY - 1) == null && sc.GetPiece(posX, posY - 2) == null && sc.GetPiece(posX, posY - 3) == null)
+                            {
+                                MovePlateCastleSpawn(posX, posY - 2, sc.GetPiece(posX, posY - 4));
+                            }
+                            
+                        }
+                        if(sc.GetPiece(posX, posY + 3).GetComponent<Pieces>().name == $"{team}_rook" && sc.GetPiece(posX, posY + 3).GetComponent<Pieces>().turnCounter == 0)
+                        {
+                            if(sc.GetPiece(posX, posY + 1) == null && sc.GetPiece(posX, posY + 2) == null)
+                            {
+                                MovePlateCastleSpawn(posX, posY + 2, sc.GetPiece(posX, posY + 3));
+                            }
+                        }
+                    }
+                }
                 break;
             case "black_rook":
             case "white_rook":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
                 {
                     LineMovePlate(1, 0);
                     LineMovePlate(-1, 0);
@@ -94,11 +115,11 @@ public class Pieces : MonoBehaviour
                 }
                 break;
             case "black_pawn":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
                     PawnMovePlate(posX - 1, posY);
                 break;
             case "white_pawn":
-                if (board.GetComponent<Board>().currentPlayer == team)
+                if (board.GetComponent<Board>().currentPlayer == team && !board.GetComponent<Board>().gameOver)
                     PawnMovePlate(posX + 1, posY);
                 break;
         }
@@ -203,6 +224,18 @@ public class Pieces : MonoBehaviour
         MovePlate mpScript = mp.GetComponent<MovePlate>();
         mpScript.attack = true;
         mpScript.SetReference(gameObject);
+        mpScript.SetCoords(matrixX, matrixY);
+    }
+
+    public void MovePlateCastleSpawn(int matrixX, int matrixY, GameObject secondPiece)
+    {
+        Board sc = board.GetComponent<Board>();
+        GameObject mp = Instantiate(movePlate, sc.GetTilePosition(matrixX, matrixY), quaternion.identity);
+
+        MovePlate mpScript= mp.GetComponent<MovePlate>();
+        mpScript.castle = true;
+        mpScript.SetReference(gameObject);
+        mpScript.SetReference2(secondPiece);
         mpScript.SetCoords(matrixX, matrixY);
     }
 }
