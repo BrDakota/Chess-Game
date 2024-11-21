@@ -17,3 +17,5 @@
         it to attack
     MovePlateSpawn(): This instatiates the move plates at desired locations
     MovePlateAttackSpawn(): This is the same as MovePlateSpawn() but it sets the attack flag to true to destroy the opposite game object
+    MovePlateCastleSpawn(): This function is similar to the attack spawn. The difference is that it excepts an extra parameter
+        this extra parameter is for the other piece involved in castling (the rook).

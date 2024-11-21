@@ -1,10 +1,13 @@
 ================ PROPERTIES ================
     Reference: This is the game object the move plates should represent
+    Reference2: This is a second piece reference mostly used for castling
     matrixX: This is the row of the move plate
     matrixY: This is the column of the move plate
     attack: This is a flag to show if the move plate represents an attack
+    castle: This flags to see if the move plate represents the castling action
 
 ================ FUCNTIONS ================
     SetReference(): This sets the Reference piece
+    SetReference2(): This is a second reference piece for when another one might be needed
     GetReference(): This returns the reference piece
     SetCoords(): This sets the matrixX and matrixY
