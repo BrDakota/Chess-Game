@@ -132,7 +132,7 @@ public class Pieces : MonoBehaviour
         int y = posY + yIncrement;
 
         while(sc.PositionOnBoard(x, y) && sc.GetPiece(x, y) == null){
-            MovePlateAttackSpawn(x, y);
+            MovePlateSpawn(x, y);
             x += xIncrement;
             y += yIncrement;
         }

@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Numerics;
+using TMPro;
 using Unity.Mathematics;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class Board : MonoBehaviour
@@ -16,6 +18,7 @@ public class Board : MonoBehaviour
 
     public GameObject quitBtn;
     public GameObject resetBtn;
+    public GameObject winnerText;
 
     // key: king[0], queen[1], rook[2], bishop[3], knight[4], pawn[5]
     public GameObject[] blackPieces = new GameObject[6];
@@ -24,6 +27,7 @@ public class Board : MonoBehaviour
     private GameObject[] playerBlack = new GameObject[16];
 
     public string currentPlayer = "white";
+    public string winner = "";
     public bool gameOver = false;
 
     private string[] charArr = {"A", "B", "C", "D", "E", "F", "G", "H"};
@@ -89,15 +93,27 @@ public class Board : MonoBehaviour
         resetBtn.SetActive(false);
         quitBtn = GameObject.FindGameObjectWithTag("QuitBtn");
         quitBtn.SetActive(false);
+        winnerText = GameObject.FindGameObjectWithTag("WinnerTxt");
+        winnerText.GetComponent<TMP_Text>().text = "";
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (gameOver)
+        if (winner == "black")
         {
+            gameOver = true;
             resetBtn.SetActive(true);
             quitBtn.SetActive(true);
+            winnerText.GetComponent<TMP_Text>().text = "Black has won!";
+
+        }
+        else if(winner == "white")
+        {
+            gameOver = true;
+            resetBtn.SetActive(true);
+            quitBtn.SetActive(true);
+            winnerText.GetComponent<TMP_Text>().text = "White has won!";
         }
     }
 

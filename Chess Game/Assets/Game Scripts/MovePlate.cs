@@ -23,6 +23,10 @@ public class MovePlate : MonoBehaviour
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.green;
         }
+        if (attack)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
     }
 
     public void Update(){
@@ -36,6 +40,10 @@ public class MovePlate : MonoBehaviour
 
                 if(attack){
                     GameObject cp = board.GetComponent<Board>().GetPiece(matrixX, matrixY);
+
+                    if (cp.GetComponent<Pieces>().name == "white_king") board.GetComponent<Board>().winner = "black";
+                    if (cp.GetComponent<Pieces>().name == "black_king") board.GetComponent<Board>().winner = "white";
+
                     Destroy(cp);
                 }
 

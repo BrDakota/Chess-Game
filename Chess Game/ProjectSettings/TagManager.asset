@@ -8,6 +8,7 @@ TagManager:
   - MovePlate
   - ResetBtn
   - QuitBtn
+  - WinnerTxt
   layers:
   - Default
   - TransparentFX
