@@ -191,6 +191,9 @@ public class Pieces : MonoBehaviour
                 {
                     MovePlateSpawn(x - 1, y);
                     MovePlateSpawn(x, y);
+                }else
+                {
+                    MovePlateSpawn(x, y);
                 }
             }
             else if(sc.GetPiece(x, y) == null){
